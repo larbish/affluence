@@ -1,0 +1,24 @@
+
+<div class="d-flex justify-content-center">
+	<i *ngIf="loading" class="m-5 fa fa-spinner fa-spin fa-3x fa-fw"></i>
+</div>
+<ng-container *ngIf="!loading">
+	<div *ngIf="!timetableToSave" class="d-flex justify-content-between mt-5"> 
+		<input name="csvupload" id="csvupload" (change)="onFileChange($event.target.files)" type="file" />
+		<button (click)="uploadCsv()" [disabled]="!csvFile" class="btn btn-dark">
+			Upload
+		</button>
+	</div>
+	<div *ngIf="timetableToSave">
+		<app-saved-table
+			[timeSlots]="timetableToSave.timeSlots"
+			[canDeleteSlots]="false">
+		</app-saved-table>
+		<p>Do you want to save this timetable ?</p>
+		<div class="d-flex justify-content-center">
+			<button (click)="saveTimetable()" class="btn btn-dark mr-3 w-25">yes</button>
+			<button (click)="timetableToSave = null" class="btn btn-light w-25">No</button>
+		</div>
+	</div>
+</ng-container>
+

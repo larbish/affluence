@@ -1,0 +1,15 @@
+version: '3'
+services:
+  affluence-api:
+    build: .
+    command: npm run dev
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+
+  mongodb:
+    image: mongo:4.2.2-bionic
+    ports:
+      - "27018:27017"
+    command: --wiredTigerCacheSizeGB 2.0

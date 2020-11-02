@@ -1,0 +1,20 @@
+<div *ngIf="loading" class="d-flex justify-content-center">
+	<i class="m-5 fa fa-spinner fa-spin fa-3x fa-fw"></i>
+</div>
+<table class="table table-striped mt-5" *ngIf="!loading && timeSlots">
+	<thead>
+		<tr>
+			<th scope="col" *ngIf="canDeleteSlots"><i (click)="deleteSlots()" class="cursor-pointer fa fa-2x fa-trash"></i></th>
+			<th scope="col">Opening datetime</th>
+			<th scope="col">Closing datetime</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let slot of timeSlots; index as i">
+			<th *ngIf="canDeleteSlots"><input type="checkbox" [(ngModel)]="slot.selected"></th>
+			<td>{{ slot.openingDatetime | date: 'MMM d, y, h:mm:ss a' }}</td>
+			<td>{{ slot.closingDatetime | date: 'MMM d, y, h:mm:ss a' }}</td>
+		</tr>
+	</tbody>
+</table>
+		

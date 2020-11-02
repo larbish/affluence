@@ -1,0 +1,23 @@
+<div class="container my-5">
+	<h1 class="text-center">Timetables Manager</h1>
+
+	<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs mt-5">
+		<li [ngbNavItem]="1">
+			<a ngbNavLink [ngClass]="{ 'text-active': active === 1 }">Saved Timetables</a>
+			<ng-template ngbNavContent >
+				<app-saved-table *ngIf="timeSlots" [timeSlots]="timeSlots"></app-saved-table>
+				<div  *ngIf="!timeSlots" class="mt-5 alert alert-secondary" role="alert">
+					No timetable saved yet ! Please upload one.
+				</div>
+			</ng-template>
+		</li>
+		<li [ngbNavItem]="2">
+			<a ngbNavLink [ngClass]="{ 'text-active': active === 2 }">Upload new timetables</a>
+			<ng-template ngbNavContent>
+				<app-upload-table (timetableSaved)="interceptNewTimetableEvent($event)"></app-upload-table>
+			</ng-template>
+		</li>
+	  </ul>
+	  
+	  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+</div>

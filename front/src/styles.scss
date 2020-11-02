@@ -1,0 +1,11 @@
+/* Bootstrap */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+/* Font awesome icons */
+@import '~font-awesome/css/font-awesome.css';
+
+/* Custom css available in all app */
+@import './app/components/scss/text';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

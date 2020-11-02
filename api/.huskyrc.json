@@ -1,0 +1,6 @@
+{
+	"hooks": {
+		"commit-msg": "scripts/git-hooks/commit-format-hook.js $HUSKY_GIT_PARAMS",
+		"pre-commit": "npm run lint && npm run prettier"
+	}
+}

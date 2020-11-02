@@ -1,0 +1,37 @@
+{
+  "name": "affluence-node-test",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon",
+    "build": "rimraf ./dist && tsc",
+    "tslint": "tslint --project tsconfig.json",
+    "prettier": "prettier --check 'src/**/*.ts'"
+  },
+  "dependencies": {
+    "@types/mongodb": "^3.5.32",
+    "body-parser": "~1.17.1",
+    "cors": "^2.8.5",
+    "csv-parser": "^2.3.3",
+    "csvtojson": "^2.0.10",
+    "express": "~4.15.2",
+    "mongodb": "^3.6.2"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/csvtojson": "^1.1.5",
+    "@types/express": "^4.17.8",
+    "@types/node": "^14.14.5",
+    "copyfiles": "^2.4.0",
+    "husky": "^4.3.0",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.0.0",
+    "tslint": "^6.1.3",
+    "tslint-config-airbnb": "^5.11.2",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^4.0.5"
+  }
+}
